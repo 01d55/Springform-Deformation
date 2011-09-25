@@ -1,0 +1,6 @@
+For portibility, this project has been updated to compile with autotools rather
+than the hand-made Makefile, which was compatibile only with UCSC's unix.ic 
+system. That system has since been altered and is no longer compatible with 
+the old Makefile! The initial commit of the git repository preserves the old,
+broken state of the project. For documentation of the project itself, see
+project/html/index.html
