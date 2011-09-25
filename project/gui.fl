@@ -1,0 +1,97 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0109 
+header_name {.hpp} 
+code_name {.cpp}
+class GUI {open
+} {
+  Function {GUI()} {open
+  } {
+    Fl_Window window {
+      label {Springform Deformation} open
+      xywh {277 226 625 635} type Double visible
+    } {
+      Fl_Group {} {
+        label Control open
+        xywh {160 540 410 90}
+      } {
+        Fl_Button load {
+          label {Load a File}
+          callback {sWin->readFile(fl_file_chooser("Open File","*.coor",filename));
+sWin->redraw();}
+          xywh {440 565 120 65} labelsize 12
+          code0 {\#include <FL/fl_file_chooser.H>}
+        }
+        Fl_Button {} {
+          label {Reset All}
+          callback {sWin->reset();
+sWin->redraw();}
+          xywh {160 565 135 30}
+        }
+        Fl_Button {} {
+          label {Reset Animation}
+          callback {sWin->resetAnimation();
+sWin->redraw();}
+          xywh {295 565 135 30}
+        }
+        Fl_Button {} {
+          label {Start Animation}
+          callback {sWin->startAnimation();}
+          xywh {160 595 270 35}
+        }
+        Fl_Check_Button {} {
+          label grid
+          callback {sWin->displayGrid(o->value());
+sWin->redraw();} selected
+          xywh {205 545 75 20} down_box DOWN_BOX shortcut 0x6d value 1
+        }
+        Fl_Check_Button {} {
+          label model
+          callback {sWin->displayModel(o->value());
+sWin->redraw();}
+          xywh {325 545 75 20} down_box DOWN_BOX shortcut 0x6d value 1
+        }
+      }
+      Fl_Box sWin {
+        label label
+        xywh {5 10 570 510}
+        code0 {\#include "SFDWin.hpp"}
+        class SFDWin
+      }
+      Fl_Group {} {
+        label {rotate view} open
+        xywh {0 535 155 100}
+      } {
+        Fl_Slider x {
+          label x
+          callback {sWin->rotatex(o->value());
+sWin->redraw();}
+          xywh {5 535 40 80} minimum -360 maximum 360 step 0.1
+        }
+        Fl_Slider y {
+          label y
+          callback {sWin->rotatey(o->value());
+sWin->redraw();}
+          xywh {60 535 40 80} minimum -360 maximum 360 step 0.1
+        }
+        Fl_Slider z {
+          label z
+          callback {sWin->rotatez(o->value());
+sWin->redraw();}
+          xywh {115 535 40 80} minimum -360 maximum 360 step 0.1
+        }
+      }
+      Fl_Slider zoom {
+        label zoom
+        callback {sWin->zoom(o->value());
+sWin->redraw();}
+        xywh {585 5 40 600} minimum -100 maximum -1 step 0.05 value -30
+      }
+    }
+  }
+  Function {show()} {open
+  } {
+    code {window->show();
+sWin->show();} {}
+  }
+  decl {char filename[1024];} {}
+} 

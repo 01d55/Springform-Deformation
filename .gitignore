@@ -1,0 +1,6 @@
+#compilation products
+*.o
+SFD
+# from gui.fl
+gui.cpp
+gui.hpp

@@ -1,0 +1,46 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body
+	{
+	background:#000066;
+	font-family: "Times New Roman", Times, serif;
+	color:#CCCCCC;
+	} 
+
+a 
+{
+	color:#33ffff;
+}
+
+a:hover{color:#33FFFF;}
+
+a:visited{color:#CCFF00}
+
+a img
+	{
+	border: none;
+	text-decoration:none;
+	}
+
+div
+{
+float:left;
+margin:5px;
+max-width: 1000px;
+}
+
+img
+{
+float:right;
+}
+
+.linkbox
+{
+float:right;
+}
+
+.container
+{
+	min-width:600px;
+}
