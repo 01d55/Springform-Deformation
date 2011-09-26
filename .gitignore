@@ -1,6 +1,19 @@
 #compilation products
 *.o
+*.Po
 SFD
 # from gui.fl
 gui.cpp
 gui.hpp
+#Automake products
+aclocal.m4
+autom4te.cache
+autoscan.log
+configure
+config.h
+config.h.in
+config.log
+config.status
+Makefile
+Makefile.in
+stamp-h1
